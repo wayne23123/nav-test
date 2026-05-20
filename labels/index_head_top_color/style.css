@@ -1,0 +1,11 @@
+.index-head-top-color {
+  height: 40px;
+  background: #ff0000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
+}
