@@ -1,151 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="UTF-8">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
 
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <meta name="theme-color" content="#ff0000" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#8b0000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ff0000" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#8b0000" media="(prefers-color-scheme: dark)" />
 
-  <meta name="keywords" content="nav test">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="nav x scroll test">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta name="keywords" content="nav test" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="nav x scroll test" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
 
-  <title>Nav X Scroll Test</title>
+    <title>Nav X Scroll Test</title>
 
-  <style>
-    .cgi-body {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      background-color: #FFFFFF;
-    }
+    <style>
+      .cgi-body {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+      }
 
-    a {
-      text-decoration: none;
-      cursor: pointer;
-      color: #333;
-    }
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: #333;
+      }
 
-    html,
-    body {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      min-height: 100%;
-      font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    }
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+        font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-    ul li {
-      list-style: none;
-    }
+      ul li {
+        list-style: none;
+      }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-    td,
-    th {
-      border: 1px solid #DDD;
-    }
+      td,
+      th {
+        border: 1px solid #ddd;
+      }
 
-    body {
-      overflow: hidden;
-      overflow-y: auto;
-      background-attachment: fixed;
-      background-position: top;
-      background-color: #f5f5f5;
-    }
+      body {
+        overflow: hidden;
+        overflow-y: auto;
+        background-attachment: fixed;
+        background-position: top;
+        background-color: #f5f5f5;
+      }
 
-    #ios-status-cover {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 800px;
-      height: 18px;
-      background: #ff0000;
-      z-index: 899;
-      pointer-events: none;
-      display: none;
-    }
-
-    @media (prefers-color-scheme: dark) {
       #ios-status-cover {
-        background: #8b0000;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 800px;
+        height: 18px;
+        background: #ff0000;
+        z-index: 899;
+        pointer-events: none;
+        display: none;
       }
-    }
 
-    .test-content {
-      padding: 16px;
-      line-height: 1.8;
-    }
-
-    .test-block {
-      height: 1600px;
-      padding: 16px;
-      background: linear-gradient(#ffffff, #dddddd);
-      box-sizing: border-box;
-    }
-  </style>
-
-  <script>
-    (function () {
-      const ua = window.navigator.userAgent || '';
-      const platform = window.navigator.platform || '';
-      const maxTouchPoints = window.navigator.maxTouchPoints || 0;
-
-      const isIOS =
-        /iPhone|iPad|iPod/i.test(ua) ||
-        (platform === 'MacIntel' && maxTouchPoints > 1);
-
-      if (isIOS) {
-        document.documentElement.classList.add('is-ios');
+      @media (prefers-color-scheme: dark) {
+        #ios-status-cover {
+          background: #8b0000;
+        }
       }
-    })();
-  </script>
-</head>
 
-<body>
-  <div id="ios-status-cover"></div>
+      .test-content {
+        padding: 16px;
+        line-height: 1.8;
+      }
 
-  <div class="cgi-body">
-    <!--头部首页-->
-    {:label('index_head_top_color')}
+      .test-block {
+        height: 1600px;
+        padding: 16px;
+        background: linear-gradient(#ffffff, #dddddd);
+        box-sizing: border-box;
+      }
+    </style>
 
-    <!--顶部导航-->
-    {:label('nav_x_scroll_new')}
+    <script>
+      ;(function () {
+        const ua = window.navigator.userAgent || ''
+        const platform = window.navigator.platform || ''
+        const maxTouchPoints = window.navigator.maxTouchPoints || 0
 
-    <main class="test-content">
-      <h1>Nav X Scroll 測試頁</h1>
-      <p>這裡是 GitHub Pages 測試環境，用來測 iPhone Safari fixed 導覽列與狀態列問題。</p>
-      <p>請往下滑，超過 300px 後固定導覽列會出現。</p>
+        const isIOS = /iPhone|iPad|iPod/i.test(ua) || (platform === 'MacIntel' && maxTouchPoints > 1)
 
-      <div class="test-block">
-        <p>測試長內容。</p>
-        <p>往下滑動時觀察頂部 fixed 導覽列與 iPhone 狀態列。</p>
-      </div>
-    </main>
-  </div>
+        if (isIOS) {
+          document.documentElement.classList.add('is-ios')
+        }
+      })()
+    </script>
+  </head>
 
-  <script src="./label-loader.js"></script>
-</body>
+  <body>
+    <div id="ios-status-cover"></div>
+
+    <div class="cgi-body">
+      <!--顶部导航-->
+      {:label('nav_x_scroll_new')}
+
+      <main class="test-content">
+        <h1>Nav X Scroll 測試頁</h1>
+        <p>這裡是 GitHub Pages 測試環境，用來測 iPhone Safari fixed 導覽列與狀態列問題。</p>
+        <p>請往下滑，超過 300px 後固定導覽列會出現。</p>
+
+        <div class="test-block">
+          <p>測試長內容。</p>
+          <p>往下滑動時觀察頂部 fixed 導覽列與 iPhone 狀態列。</p>
+        </div>
+      </main>
+    </div>
+
+    <script src="./label-loader.js"></script>
+  </body>
 </html>
